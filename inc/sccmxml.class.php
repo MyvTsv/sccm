@@ -418,8 +418,8 @@ XML;
         $CONTENT    = $this->sxml->CONTENT[0];
         $i = 0;
         foreach ($PluginSccmSccm->getStorages($this->device_id) as $value) {
-            $value['gld-TotalSize'] = intval($value['gld-TotalSize']) * 1024;
-            $value['gld-FreeSpace'] = intval($value['gld-FreeSpace']) * 1024;
+            $value['gld-TotalSize'] = intval($value['gld-TotalSize']);
+            $value['gld-FreeSpace'] = intval($value['gld-FreeSpace']);
             $CONTENT->addChild('DRIVES');
             $DRIVES = $this->sxml->CONTENT[0]->DRIVES[$i];
             $DRIVES->addChild('DESCRIPTION', $value['gld-Description']);
